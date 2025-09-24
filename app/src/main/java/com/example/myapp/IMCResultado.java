@@ -24,7 +24,6 @@ public class  IMCResultado extends AppCompatActivity {
 
         tvPerfil = findViewById(R.id.tvPerfil);
 
-
         Bundle b = getIntent().getExtras();
 
         float peso = b.getFloat("peso");
