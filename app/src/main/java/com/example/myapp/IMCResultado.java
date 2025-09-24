@@ -10,7 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class IMCResultado extends AppCompatActivity {
+public class  IMCResultado extends AppCompatActivity {
     TextView tvPeso, tvAltura, tvIMC;
     ImageView tvPerfil;
 
@@ -30,7 +30,7 @@ public class IMCResultado extends AppCompatActivity {
         float peso = b.getFloat("peso");
         float altura = b.getFloat("altura");
 
-        float imc = (peso)/(altura*altura);
+        float imc = peso/(altura*altura);
 
         tvPeso.setText(Float.toString(peso));
         tvAltura.setText(Float.toString(altura));
@@ -39,9 +39,20 @@ public class IMCResultado extends AppCompatActivity {
         if(imc<18.5){
             tvPerfil.setImageResource(R.drawable.abaixopeso);
         }
-        if(imc<25){
+        else if(imc<25){
             tvPerfil.setImageResource(R.drawable.normal);
         }
-
+        else if(imc<30){
+            tvPerfil.setImageResource(R.drawable.sobrepeso);
+        }
+        else if(imc<35){
+            tvPerfil.setImageResource(R.drawable.obesidade1);
+        }
+        else if(imc<40){
+            tvPerfil.setImageResource(R.drawable.obesidade2);
+        }
+        else{
+            tvPerfil.setImageResource(R.drawable.obesidade3);
+        }
     }
 }
