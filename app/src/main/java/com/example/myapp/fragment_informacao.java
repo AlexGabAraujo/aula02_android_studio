@@ -26,6 +26,9 @@ public class fragment_informacao extends Fragment {
         imagemfd = view.findViewById(R.id.imagemf);
         imcf = view.findViewById(R.id.imcf);
 
+        Bundle b;
+        b.getArgume
+        altura.
 
         return view;
     }

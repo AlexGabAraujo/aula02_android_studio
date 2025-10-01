@@ -10,8 +10,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class IMCResultado extends AppCompatActivity {
     Button tvButtonInformation, tvButtonHelp;
-    TextView tvPeso, tvAltura, tvIMC;
-    ImageView tvPerfil;
+
+    /*TextView tvPeso, tvAltura, tvIMC;
+    ImageView tvPerfil;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,23 @@ public class IMCResultado extends AppCompatActivity {
         String nome = b.getString("nome");
         float imc = b.getFloat("imc");
 
-        tvButtonInformation.setOnClickListener(v -> exibirInformacao());
+        tvButtonInformation.setOnClickListener(v -> exibirInformacao(imc, altura, peso, nome));
         tvButtonHelp.setOnClickListener(v -> exibirSaude());
     };
 
 
-    private void exibirInformacao() {
+    private void exibirInformacao(Float imc, Float altura, Float peso, String nome) {
+        Bundle bundle = new Bundle();
+        bundle.putString("nome", nome);
+        bundle.putFloat("imc", imc);
+        bundle.putFloat("peso", peso);
+        bundle.putFloat("altura", altura);
+
+        fragment_informacao fragmentInformacao = new fragment_informacao();
+        fragmentInformacao.setArguments(bundle);
+
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.tela, new fragment_informacao());
+        ft.replace(R.id.tela, fragmentInformacao);
         ft.commit();
     }
 
