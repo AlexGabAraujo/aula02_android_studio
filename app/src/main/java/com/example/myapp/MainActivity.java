@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,48 +20,22 @@ public class MainActivity extends AppCompatActivity {
         nome = findViewById(R.id.Nome);
         altura = findViewById(R.id.Altura);
         peso = findViewById(R.id.Peso);
+
         b.setOnClickListener(v -> {
             Intent intent = new Intent(this, IMCResultado.class);
-            //passar os dados para o bundle
-            float peso = Float.parseFloat(edpeso.getText().toString());
-            float altura = Float.parseFloat(edaltura.getText().toString());
+            float bpeso = Float.parseFloat(peso.getText().toString());
+            float baltura = Float.parseFloat(altura.getText().toString());
+            String bnome = nome.getText().toString();
+            float bimc = bpeso/(baltura*baltura);
 
-            intent.putExtra("altura", altura);
-            intent.putExtra("peso", peso);
+            intent.putExtra("altura", baltura);
+            intent.putExtra("peso", bpeso);
+            intent.putExtra("nome", bnome);
 
             startActivity(intent);
         });
     }
 }
-
-
-/*
-
-public class MainActivity extends AppCompatActivity {
-    Button b;
-    EditText edpeso, edaltura;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        b = findViewById(R.id.btCalculaIMC);
-        edaltura = findViewById(R.id.EdAltura);
-        edpeso = findViewById(R.id.EdPeso);
-        b.setOnClickListener(v -> {
-            Intent intent = new Intent(this, IMCResultado.class);
-            //passar os dados para o bundle
-            float peso = Float.parseFloat(edpeso.getText().toString());
-            float altura = Float.parseFloat(edaltura.getText().toString());
-
-            intent.putExtra("altura", altura);
-            intent.putExtra("peso", peso);
-
-            startActivity(intent);
-        });
-    }
-}
-
- */
 
 
 

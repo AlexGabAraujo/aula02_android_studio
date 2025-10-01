@@ -1,0 +1,51 @@
+package com.example.myapp;
+
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class IMCResultado {
+    TextView tvPeso, tvAltura, tvIMC;
+    ImageView tvPerfil;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_resultado);
+        tvPeso = findViewById(R.id.tvPeso);
+        tvAltura = findViewById(R.id.tvAltura);
+        tvIMC = findViewById(R.id.tvIMC);
+
+        tvPerfil = findViewById(R.id.tvPerfil);
+
+        Bundle b = getIntent().getExtras();
+
+        float peso = b.getFloat("peso");
+        float altura = b.getFloat("altura");
+
+        float imc = peso/(altura*altura);
+
+        tvPeso.setText(Float.toString(peso));
+        tvAltura.setText(Float.toString(altura));
+        tvIMC.setText(Float.toString(imc));
+
+        if(imc<18.5){
+            tvPerfil.setImageResource(R.drawable.abaixopeso);
+        }
+        else if(imc<25){
+            tvPerfil.setImageResource(R.drawable.normal);
+        }
+        else if(imc<30){
+            tvPerfil.setImageResource(R.drawable.sobrepeso);
+        }
+        else if(imc<35){
+            tvPerfil.setImageResource(R.drawable.obesidade1);
+        }
+        else if(imc<40){
+            tvPerfil.setImageResource(R.drawable.obesidade2);
+        }
+        else{
+            tvPerfil.setImageResource(R.drawable.obesidade3);
+        }
+    }
+}
