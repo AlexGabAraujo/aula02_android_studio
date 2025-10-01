@@ -31,6 +31,7 @@
         tools:layout_editor_absoluteY="81dp" />
 
     <FrameLayout
+        android:id="@+id/tela"
         android:layout_width="409dp"
         android:layout_height="600dp"
         tools:layout_editor_absoluteX="1dp"

@@ -6,9 +6,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 public class IMCResultado extends AppCompatActivity {
     Button tvButtonInformation, tvButtonHelp;
+
+
     TextView tvPeso, tvAltura, tvIMC;
     ImageView tvPerfil;
 
@@ -34,7 +37,15 @@ public class IMCResultado extends AppCompatActivity {
         String nome = b.getString("nome");
         float imc = b.getFloat("imc");
 
-        tvButtonInformation
+
+
+        });
+
+    private void exibirFragmentoA() {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.tela, new FragmentoA());
+        ft.commit();
+    }
 
         /*
         tvPeso.setText(Float.toString(peso));
@@ -60,7 +71,7 @@ public class IMCResultado extends AppCompatActivity {
             tvPerfil.setImageResource(R.drawable.obesidade3);
         }*/
     }
-}
+
 
 
 /*
@@ -136,5 +147,53 @@ private String emailSalvo;
         Toast.makeText(this, "Email ou senha incorretos.", Toast.LENGTH_SHORT).show();
     }
 }
+
+ */
+
+
+
+/*
+---------------------------------------------------------------------------------*
+
+
+
+    private EditText inputEmail, inputSenha;
+    private Button buttonLogin;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_b, container, false);
+
+        inputEmail = view.findViewById(R.id.editTextEmail);
+        inputSenha = view.findViewById(R.id.editTextSenha);
+        buttonLogin = view.findViewById(R.id.buttonLogin);
+
+        Bundle bundle = getArguments();
+        String emailSalvo = "";
+        String senhaSalva = "";
+
+        if (bundle != null) {
+            emailSalvo = bundle.getString("email");
+            senhaSalva = bundle.getString("senha");
+        }
+
+        String finalEmailSalvo = emailSalvo;
+        String finalSenhaSalva = senhaSalva;
+
+        buttonLogin.setOnClickListener(v -> {
+            String emailDigitado = inputEmail.getText().toString();
+            String senhaDigitada = inputSenha.getText().toString();
+
+            if (emailDigitado.equals(finalEmailSalvo) && senhaDigitada.equals(finalSenhaSalva)) {
+                ((MainActivity) getActivity()).loginOk();
+            } else {
+                ((MainActivity) getActivity()).loginFalhou();
+            }
+        });
+
+        return view;
+    }
+}
+
 
  */
