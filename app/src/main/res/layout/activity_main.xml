@@ -78,4 +78,12 @@
         android:text="Calcular"
         tools:layout_editor_absoluteX="155dp"
         tools:layout_editor_absoluteY="380dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="339dp"
+        android:layout_height="360dp"
+        app:srcCompat="@drawable/perfil"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="380dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

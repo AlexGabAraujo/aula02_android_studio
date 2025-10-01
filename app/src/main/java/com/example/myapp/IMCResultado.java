@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class IMCResultado {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class IMCResultado extends AppCompatActivity {
     TextView tvPeso, tvAltura, tvIMC;
     ImageView tvPerfil;
 
