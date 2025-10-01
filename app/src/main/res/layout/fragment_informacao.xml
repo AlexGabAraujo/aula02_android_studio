@@ -10,80 +10,96 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/altura3"
+        <TextView
+            android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:ems="10"
-            android:hint="0.00"
-            android:inputType="text"
-            app:layout_constraintStart_toStartOf="@+id/nome3"
-            app:layout_constraintTop_toBottomOf="@+id/nome3" />
+            android:layout_marginTop="53dp"
+            android:text="Peso: "
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome:"
-            app:layout_constraintBaseline_toBaselineOf="@+id/nome3"
-            app:layout_constraintEnd_toEndOf="@+id/textView15"
-            app:layout_constraintStart_toStartOf="@+id/textView15" />
+            android:text="IMC: "
+            app:layout_constraintBaseline_toBaselineOf="@+id/imcf"
+            app:layout_constraintEnd_toEndOf="@+id/textView14"
+            app:layout_constraintStart_toEndOf="@+id/textView14" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="43dp"
             android:text="Altura:"
-            app:layout_constraintBaseline_toBaselineOf="@+id/altura3"
+            app:layout_constraintBaseline_toBaselineOf="@+id/alturaf"
+            app:layout_constraintStart_toStartOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="133dp"
+            android:text="Nome:"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:text="Peso: "
-            app:layout_constraintBaseline_toBaselineOf="@+id/peso3"
-            app:layout_constraintStart_toStartOf="@+id/imageView4" />
+            android:layout_marginTop="213dp"
+            android:text="Nome:"
+            app:layout_constraintStart_toStartOf="@+id/textView16"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/peso3"
+        <TextView
+            android:id="@+id/nomef"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:ems="10"
-            android:hint="0.00
-"
-            android:inputType="text"
-            app:layout_constraintStart_toStartOf="@+id/altura3"
-            app:layout_constraintTop_toBottomOf="@+id/altura3" />
+            android:layout_marginStart="55dp"
+            android:text="Nome:"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+            app:layout_constraintStart_toEndOf="@+id/textView16" />
 
-        <EditText
-            android:id="@+id/nome3"
+        <TextView
+            android:id="@+id/alturaf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51dp"
+            android:text="Altura:"
+            app:layout_constraintStart_toStartOf="@+id/nomef"
+            app:layout_constraintTop_toBottomOf="@+id/nomef" />
+
+        <TextView
+            android:id="@+id/pesof"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="199dp"
-            android:ems="10"
-            android:hint="Nome"
-            android:inputType="text"
-            app:layout_constraintStart_toEndOf="@+id/textView16"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Peso: "
+            app:layout_constraintStart_toStartOf="@+id/imcf"
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/imcf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="29dp"
+            android:text="Peso: "
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/pesof" />
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/peso3"
-            app:srcCompat="@drawable/perfil" />
+            android:id="@+id/imagemf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="38dp"
+            app:layout_constraintStart_toStartOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            tools:src="@tools:sample/avatars" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
