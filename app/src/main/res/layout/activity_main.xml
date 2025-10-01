@@ -11,79 +11,94 @@
         android:id="@+id/Altura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
         android:ems="10"
         android:hint="0.00"
         android:inputType="text"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="199dp" />
+        app:layout_constraintStart_toStartOf="@+id/Nome"
+        app:layout_constraintTop_toBottomOf="@+id/Nome" />
 
     <EditText
         android:id="@+id/Nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="53dp"
         android:ems="10"
         android:hint="Nome"
         android:inputType="text"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="128dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Peso: "
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="283dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/Peso"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
         android:text="Altura:"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="213dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/Altura"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nome:"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="142dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/Nome"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="49dp"
         android:text="Calculo de IMC"
         android:textSize="50px"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="49dp" />
+        app:layout_constraintStart_toStartOf="@+id/Nome"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/Peso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
         android:ems="10"
         android:hint="0.00
 "
         android:inputType="text"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="270dp" />
+        app:layout_constraintStart_toStartOf="@+id/Altura"
+        app:layout_constraintTop_toBottomOf="@+id/Altura" />
 
     <Button
         android:id="@+id/btCalculaIMC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
         android:text="Calcular"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="380dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Peso" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="339dp"
-        android:layout_height="360dp"
-        app:srcCompat="@drawable/perfil"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="380dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btCalculaIMC"
+        app:srcCompat="@drawable/perfil" />
 </androidx.constraintlayout.widget.ConstraintLayout>

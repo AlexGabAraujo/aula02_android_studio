@@ -10,8 +10,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class IMCResultado extends AppCompatActivity {
     Button tvButtonInformation, tvButtonHelp;
-
-
     TextView tvPeso, tvAltura, tvIMC;
     ImageView tvPerfil;
 
@@ -23,13 +21,6 @@ public class IMCResultado extends AppCompatActivity {
         tvButtonInformation = findViewById(R.id.buttonInformation);
         tvButtonHelp = findViewById(R.id.buttonHelp);
 
-        /*
-        tvPeso = findViewById(R.id.tvPeso);
-        tvAltura = findViewById(R.id.tvAltura);
-        tvIMC = findViewById(R.id.tvIMC);
-
-        tvPerfil = findViewById(R.id.tvPerfil);*/
-
         Bundle b = getIntent().getExtras();
 
         float peso = b.getFloat("peso");
@@ -37,15 +28,31 @@ public class IMCResultado extends AppCompatActivity {
         String nome = b.getString("nome");
         float imc = b.getFloat("imc");
 
+        tvButtonInformation.setOnClickListener(v -> exibirInformacao());
+        tvButtonHelp.setOnClickListener(v -> exibirSaude());
+    };
 
 
-        });
-
-    private void exibirFragmentoA() {
+    private void exibirInformacao() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.tela, new FragmentoA());
+        ft.replace(R.id.tela, new fragment_informacao());
         ft.commit();
     }
+
+    private void exibirSaude() {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.tela, new fragment_saude());
+        ft.commit();
+    }
+
+
+
+        /*
+        tvPeso = findViewById(R.id.tvPeso);
+        tvAltura = findViewById(R.id.tvAltura);
+        tvIMC = findViewById(R.id.tvIMC);
+
+        tvPerfil = findViewById(R.id.tvPerfil);*/
 
         /*
         tvPeso.setText(Float.toString(peso));
@@ -70,7 +77,7 @@ public class IMCResultado extends AppCompatActivity {
         else{
             tvPerfil.setImageResource(R.drawable.obesidade3);
         }*/
-    }
+}
 
 
 

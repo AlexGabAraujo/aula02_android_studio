@@ -5,10 +5,25 @@
     android:layout_height="match_parent"
     tools:context=".fragment_saude">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textoSaude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="289dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculo Para Ficar Saudável"
+            android:textSize="50px"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="165dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -2,17 +2,13 @@ package com.example.myapp;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link fragment_informacao#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class fragment_informacao extends Fragment {
 
     @Override

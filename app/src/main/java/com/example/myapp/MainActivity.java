@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, IMCResultado.class);
             float bpeso = Float.parseFloat(peso.getText().toString());
             float baltura = Float.parseFloat(altura.getText().toString());
-            String bnome = nome.getText().toString();
             float bimc = bpeso/(baltura*baltura);
 
             intent.putExtra("altura", baltura);
             intent.putExtra("peso", bpeso);
-            intent.putExtra("nome", bnome);
+            intent.putExtra("nome", nome.getText());
+            intent.putExtra("imc", bimc);
 
             startActivity(intent);
         });
