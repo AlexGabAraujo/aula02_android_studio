@@ -3,9 +3,13 @@ gerenciamento de memória em um aplicativo Android, especialmente em cenários d
 de tela. Como os métodos onSaveInstanceState() e onRestoreInstanceState() podem ser usados para garantir que dados
 cruciais não sejam perdidos, e como isso se relaciona com o conceito de "State Restoration" em sistemas móveis?
 
-Com o ciclo de vida voce escolhe quando uma activity sera
 
+No android podemos destruir e recriar activitys a qualquer momento para liberar memória por conta das funções como onCreate(), onPause(), onStop(),
+até mesmo se for aberta uma nova Activity, assim pode-se controlar a memória e os dados salvos nessas activities que ainda nao foram encerradas.
 
+onSaveInstanceState(): serve para salvar dados quando algum erro ou ação acontecer
+
+onRestoreInstanceState: serve para restaurar os dados salvos pela onSaveInstanceState
 
 2)(3.0)Explique os principais artefatos disponíveis em um projeto Android como manifesto, res , R, Activitys
 
