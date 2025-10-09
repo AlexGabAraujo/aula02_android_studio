@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        controllerPlaneta = new ControllerPlaneta();
+
+        PlanetaAdapter adapter new PlanetaAdapter(this, R.layout)
         nomes = new ArrayList<>(){{
             add("Gabriel");
             add("João");
