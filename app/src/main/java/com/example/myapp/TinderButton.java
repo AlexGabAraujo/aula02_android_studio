@@ -11,8 +11,17 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 public class TinderButton extends androidx.appcompat.widget.AppCompatButton {
+
+    int x0;
+    int y0;
+
+    int colorR = 120;
+    int colorG = 120;
+    int colorB = 120;
+
     public TinderButton(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.setText("Tinder Button");
@@ -33,16 +42,33 @@ public class TinderButton extends androidx.appcompat.widget.AppCompatButton {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        float x = event.getX();
-        float y = event.getY();
+        float x = event.getRawX();
+        float y = event.getRawY();
 
         Log.d("position", "X: " + x + " Y: " + y + " Event: " + event.getAction());
 
-        if(x < 0){
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            x0 = (int)x;
+            y0 = (int)y;
+        }
+
+        int dx = (int)(x - x0);
+
+        if(event.getAction() == MotionEvent.ACTION_MOVE){
+            colorR = Math.min(255, Math.max(0, 120 - dx / 5));
+            colorG = Math.min(255, Math.max(0, 120 + dx / 5));
+            colorB = 120;
+        }
+        if(event.getAction()== MotionEvent.ACTION_UP){
+            colorR=120; colorG=120; colorB=120;
+        }
+        this.setBackgroundColor(Color.rgb(colorR, colorG, colorB));
+
+        /*if(x < 0){
             setBackgroundColor(Color.RED);
         }else if (x>260){
             setBackgroundColor(Color.GREEN);
-        }
+        }*/
 
         return super.onTouchEvent(event);
     }
