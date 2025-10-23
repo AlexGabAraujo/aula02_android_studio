@@ -7,14 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.example.myapp.TinderButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <com.example.myapp.SimplePaint
+        android:id="@+id/simplePaint"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    </com.example.myapp.TinderButton>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/simplePaint"
+        app:layout_constraintStart_toStartOf="@+id/simplePaint"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
