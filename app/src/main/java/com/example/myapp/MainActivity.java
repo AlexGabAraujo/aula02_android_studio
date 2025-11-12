@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
         database.execSQL("CREATE TABLE IF NOT EXISTS notas ("+ "id INTEGER PRIMARY KEY AUTOINCREMENT,"+"name VARCHAR, texto VARCHAR)");
 
+        carregarNotas();
+
         saveButton.setOnClickListener(v -> {
             String texto = editText.getText().toString();
             if(!texto.isEmpty()){
@@ -48,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 contentValues.put("texto", texto);
                 database.insert("notas", null, contentValues);
             }
-        });
 
-        carregarNotas();
+            carregarNotas();
+            editText.setText("");
+        });
     }
 
     public void carregarNotas(){
